@@ -1,5 +1,5 @@
 /**
- * Consolidated MCP Tool Definitions — 15 student-focused tools
+ * Consolidated MCP Tool Definitions — 16 student-focused tools
  */
 
 export interface MCPTool {
@@ -289,7 +289,21 @@ export const canvasTools: MCPTool[] = [
     },
   },
 
-  // 15. get_conversations
+  // 15. get_syllabus
+  {
+    name: 'get_syllabus',
+    description: 'Get the syllabus for a course. Returns the full syllabus body/content for the specified course. Use this when the user asks to read, view, or check a course syllabus.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        ...credentialProps,
+        courseId: { type: 'number', description: 'The Canvas course ID' },
+      },
+      required: ['baseUrl', 'apiKey', 'courseId'],
+    },
+  },
+
+  // 16. get_conversations
   {
     name: 'get_conversations',
     description: 'Get inbox conversations: list all, details of one, or unread count',

@@ -1,5 +1,5 @@
 /**
- * Consolidated handler — 15 tools, each with action-based dispatch.
+ * Consolidated handler — 16 tools, each with action-based dispatch.
  */
 import { CanvasAPI } from './canvas';
 
@@ -356,7 +356,13 @@ export async function handleCanvasTool(
       break;
     }
 
-    // ===== 15. get_conversations =====
+    // ===== 15. get_syllabus =====
+    case 'get_syllabus': {
+      data = await canvas.getSyllabus(args.courseId as number);
+      break;
+    }
+
+    // ===== 16. get_conversations =====
     case 'get_conversations': {
       switch (action) {
         case 'list':
